@@ -3,7 +3,7 @@
 <head>
     <title>Airlines</title>
     <meta charset="utf-8" />
-    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="airlinesApp/site.css" rel="stylesheet" />
 </head>
 <body ng-app="airlineApp">
@@ -13,12 +13,21 @@
         <div class="row">
             <div class="col-md-6 " ng-repeat="flight in flights">
                 <div class="flightCard">
-                    <h3>{{flight.airline}}</h3>
+                    <div>
+                        <h3>{{flight.airline}}</h3>
+                        <div class="pull-right">
+                            <button class="btn btn-success">
+                                Select
+                                <span class="glyphicon glyphicon-ok"></span>
+                            </button>
+
+                        </div>
+                    </div>
                     <div>
                         <span>Flight:{{flight.price}}</span>
                         <span>Duration:{{flight.totalDuration}}</span>
                     </div>
-                    <hr />
+                    <hr/>
                     <div>
                         <span>StartTime:{{flight.startTime}}</span>
                         <span>EndTime:{{flight.endTime}}</span>
@@ -28,6 +37,7 @@
                             </li>
 
                         </ul>
+
                     </div>
                 </div>
             </div>
