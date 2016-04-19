@@ -1,35 +1,9 @@
 ﻿(function(app) {
 
-    var flightsController = function($scope) {
+    var flightsController = function ($scope, flightService) {
 
-            $scope.flights =
-            [
-            {
-                airline: "United",
-                flightNumber: "207",
-                startTime: "13:00",
-                endTime: "15:00",
-                totalDuration: "2",
-                price: 500,
-                date: "12/11/2015",
-                cities: ["ORD", "LAS"],
-                approved:false
-
-        },
-            {
-                airline: "United",
-                flightNumber: "207",
-                startTime: "13:00",
-                endTime: "15:00",
-                totalDuration: "2",
-                price: 500,
-                date: "12/11/2015",
-                cities: ["SFO", "LAS"],
-                approved: false
-
-            }
-        ];
-
+        $scope.flights = flightService.getFlights();
+           
 
         $scope.selectFlight = function (flight)
         {
@@ -37,12 +11,15 @@
                 $scope.flights[i].approved = false;
             }
 
+            if (flightService.selectFlight(flight.id)) {
+                $scope.status = "You have made a great decision!";
+            };
             flight.approved = !flight.approved;
 
         }
 
     };
 
-    app.controller("flightsController", ["$scope", flightsController]);
+    app.controller("flightsController", ["$scope", "flightService", flightsController]);
 
 }(angular.module("airlineApp")));
