@@ -2,7 +2,16 @@
 
     var flightsController = function ($scope, flightService, $timeout) {
 
-        $scope.flights = flightService.getFlights();
+
+        var onError = function() {
+            alert("error!");
+        };
+
+        var onFlights = function (response) {
+            $scope.flights = response.data;
+        }
+
+        $scope.flights = flightService.getFlights().then(onFlights,onError);
            
 
         $scope.selectFlight = function (flight)

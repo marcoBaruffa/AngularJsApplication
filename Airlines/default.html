@@ -8,9 +8,9 @@
 </head>
 <body ng-app="airlineApp">
 
-    <div class="container" ng-controller="flightsController">
+    <div class="container" ng-controller="flightsController" ng-cloack>
         <h1>Airlines!</h1>
-        <div class="alert alert-success">{{status}}</div>
+        <div class="alert alert-success" ng-show="status">{{status}}</div>
         <div class="row">
             <div class="col-md-6 " ng-repeat="flight in flights">
                 <div class="flightCard">
@@ -25,13 +25,13 @@
                         </div>
                     </div>
                     <div>
-                        <span>Flight:{{flight.price}}</span>
+                        <span>Flight:{{flight.price | currency}}</span>
                         <span>Duration:{{flight.totalDuration}}</span>
                     </div>
                     <hr />
                     <div>
-                        <span>StartTime:{{flight.startTime}}</span>
-                        <span>EndTime:{{flight.endTime}}</span>
+                        <span>StartTime:{{flight.startTime | date:'hh:mm'}}</span>
+                        <span>EndTime:{{flight.endTime | date:'hh:mm'}}</span>
                         <ul class="breadcrumb">
                             <li ng-repeat="city in flight.cities">
                                 {{city}}
