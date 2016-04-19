@@ -27,3 +27,5 @@ C:\dev\airlines\Airlines\Airlines\bin\System.Net.Http.Formatting.dll
 C:\dev\airlines\Airlines\Airlines\bin\Newtonsoft.Json.dll
 C:\dev\airlines\Airlines\Airlines\bin\System.Net.Http.Formatting.xml
 C:\dev\airlines\Airlines\Airlines\bin\Newtonsoft.Json.xml
+C:\dev\airlines\Airlines\Airlines\bin\EntityFramework.dll
+C:\dev\airlines\Airlines\Airlines\bin\EntityFramework.xml
