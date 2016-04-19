@@ -16,7 +16,7 @@
                     <div>
                         <h3>{{flight.airline}}</h3>
                         <div class="pull-right">
-                            <button class="btn btn-success">
+                            <button  ng-class="{btn:true,'btn-success':flight.approved}" ng-click="selectFlight(flight)">
                                 Select
                                 <span class="glyphicon glyphicon-ok"></span>
                             </button>

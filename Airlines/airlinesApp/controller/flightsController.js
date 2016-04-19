@@ -2,8 +2,8 @@
 
     var flightsController = function($scope) {
 
-        $scope.flights =
-        [
+            $scope.flights =
+            [
             {
                 airline: "United",
                 flightNumber: "207",
@@ -12,9 +12,10 @@
                 totalDuration: "2",
                 price: 500,
                 date: "12/11/2015",
-                cities: ["ORD", "LAS"]
+                cities: ["ORD", "LAS"],
+                approved:false
 
-            },
+        },
             {
                 airline: "United",
                 flightNumber: "207",
@@ -23,10 +24,22 @@
                 totalDuration: "2",
                 price: 500,
                 date: "12/11/2015",
-                cities: ["SFO", "LAS"]
+                cities: ["SFO", "LAS"],
+                approved: false
 
             }
         ];
+
+
+        $scope.selectFlight = function (flight)
+        {
+            for (var i = 0; i < $scope.flights.length; i++) {
+                $scope.flights[i].approved = false;
+            }
+
+            flight.approved = !flight.approved;
+
+        }
 
     };
 
